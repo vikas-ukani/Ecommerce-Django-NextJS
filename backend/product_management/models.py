@@ -5,13 +5,13 @@ from masters.models import Category
 
 class Product(models.Model):
     name = models.CharField(max_length=50, default=None)
-    slug = models.SlugField()
+    slug = models.SlugField(default=None)
     price = models.FloatField(default=0)
-    description = models.TextField()
-    discount_percentage = models.FloatField(default=0)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    description = models.TextField(default=None)
+    discount_percentage = models.FloatField(default=0, max_length=2)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
     total_stock = models.IntegerField(default=10)
-    image = models.ImageField(upload_to='images')
+    image = models.ImageField(upload_to='product-images', default=None)
     is_active = models.BooleanField(default=True)
 
     class Meta:
