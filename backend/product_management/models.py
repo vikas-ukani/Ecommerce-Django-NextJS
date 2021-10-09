@@ -1,5 +1,8 @@
 from django.db import models
 from masters.models import Category
+from django.utils.text import slugify
+
+
 # Create your models here.
 
 
@@ -20,6 +23,10 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Product, self).save(*args, **kwargs)
 
     # def get_absolute_url(self):
     #     return reverse("product_detail", kwargs={"pk": self.pk})
