@@ -10,9 +10,13 @@ class Category(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    
+    parent = models.ForeignKey(
+        'self', default=None, blank=True, null=True, related_name="sub_categories", on_delete=models.CASCADE)
+
     class Meta:
-        pass
+        unique_together = ('name', 'parent',)
+        verbose_name_plural = "categories"   
+        # pass
         # unique_together = (
         #     ('name')
         # )
