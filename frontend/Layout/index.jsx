@@ -15,7 +15,7 @@ const index = ({ children }) => {
     return (
         <>
             <Header />
-            <div className=" mt-8 mb-6 sm:mt-16 sm:mb-14 mx-auto mb-20" >
+            <div className=" mt-8 mb-6 sm:mt-20 sm:mb-14 mx-auto mb-20" >
                 {children}
             </div>
         </>
