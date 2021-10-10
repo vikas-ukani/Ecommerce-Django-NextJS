@@ -1,6 +1,6 @@
 # E-commerce-Django-NextJS
 
-# 1 ackend ( Django Python  )
+# 1. Backend ( Django Python  )
 - This project build with Django framework with Django Rest Framework APIs consumed in NextJS Frontend Framework.
 
 ### Packages 
@@ -41,7 +41,7 @@ Open [http://localhost:8000](http://localhost:8000) with your browser to run dja
 
 ---
 
-# 2 rontend ( NextJS | ReactJS  )
+# 2. Frontend ( NextJS | ReactJS  )
 ### Packages 
 - `Axiox` => Calling an Django RestAPIs.
 - `TailwindCSS` => Tailwind Design framework to design an frontend application.
