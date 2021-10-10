@@ -12,7 +12,8 @@ class Product(models.Model):
     price = models.FloatField(default=0)
     description = models.TextField(default=None)
     discount_percentage = models.FloatField(default=0, max_length=2)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
+    category = models.ForeignKey(
+        Category, related_name='category', on_delete=models.CASCADE, default=1)
     total_stock = models.IntegerField(default=10)
     image = models.ImageField(upload_to='product-images', default=None)
     is_active = models.BooleanField(default=True)
