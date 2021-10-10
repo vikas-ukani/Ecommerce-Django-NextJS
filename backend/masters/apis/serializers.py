@@ -8,8 +8,8 @@ class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Category
-        fields = ['id', 'name', 'description', 'is_active', 'sub_categories',
-                  'parent',  'created_at', 'updated_at']
+        fields = ['id', 'name', 'description', 'is_active',
+                  'sub_categories', 'parent',  'created_at', 'updated_at']
 
     @staticmethod
     def get_sub_categories(obj):

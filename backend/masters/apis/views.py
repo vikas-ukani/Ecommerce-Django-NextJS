@@ -6,7 +6,6 @@ from rest_framework.response import Response
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.viewsets import ReadOnlyModelViewSet
 
-
 class CategoryList(ReadOnlyModelViewSet):
     # class CategoryList(ListAPIView):
     queryset = Category.objects.all()
