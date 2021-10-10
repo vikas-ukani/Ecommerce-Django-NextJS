@@ -1,6 +1,7 @@
 from django.urls import path
-# from masters.apis.views import CategoriesListView
+from product_management.apis.views import ProductsListView
 
 urlpatterns = [
-    # path('categories/', CategoriesListView.as_view(), name='category-list')
+    path('products/',
+         ProductsListView.as_view({'get': 'list'}), name='category-list')
 ]
