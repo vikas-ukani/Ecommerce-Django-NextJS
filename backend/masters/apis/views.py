@@ -15,9 +15,19 @@ class CategoryList(ReadOnlyModelViewSet):
 
     def get_queryset(self):
         queryset = Category.objects.all()
+
+        parent = self.request.query_params.get('parent', None)
+        if parent is None:
+            queryset = queryset.filter(parent=None)
+        # elif parent == 'all':
+        #     queryset = queryset.all()
+        elif parent:
+            queryset = queryset.filter(parent=parent)
+
         name = self.request.query_params.get('name', None)
         if name is not None:
             queryset = queryset.filter(name=name)
+
         return queryset
 
     # def list(self, request):
