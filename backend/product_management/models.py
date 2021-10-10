@@ -8,7 +8,7 @@ from django.utils.text import slugify
 
 class Product(models.Model):
     name = models.CharField(max_length=50, default=None)
-    slug = models.SlugField(default=None)
+    slug = models.SlugField(default=None, null=True, blank=True)
     price = models.FloatField(default=0)
     description = models.TextField(default=None)
     discount_percentage = models.FloatField(default=0, max_length=2)
