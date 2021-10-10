@@ -6,11 +6,7 @@ import { getCategories } from 'services/category.service';
 export const fetchCategory = createAsyncThunk(
     'common/fetchCategory',
     async () => {
-        console.log('Fetching ' );
-        const response = await getCategories()
-        return response
-        // const response = await userAPI.fetchById(userId)
-        // return response.data
+        return await getCategories()
     }
 )
 
@@ -34,11 +30,9 @@ export const commonSlice = createSlice({
     },
     extraReducers: {
         [fetchCategory.fulfilled]: (state, action) => {
-            console.log('Fetching Data', action.payload);
             state.categories = action.payload
         },
         [fetchCategory.rejected]: (state, action) => {
-            console.log('rejected  Data');
             state.categories = []
         },
     },
