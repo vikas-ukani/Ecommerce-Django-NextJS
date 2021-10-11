@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getAllProducts } from 'services/product.service';
 
 export const fetchProducts = createAsyncThunk(
-    'common/fetchProducts',
+    'products/fetchProducts',
     async () => {
         return await getAllProducts()
     }
@@ -11,12 +11,17 @@ export const fetchProducts = createAsyncThunk(
 const initialState = {
     cartCounter: 0,
     products: [],
+    filters: {},
 }
 
 export const productSlice = createSlice({
-    name: 'product',
+    name: 'products',
     initialState,
     reducers: {
+        applyFilter: (state, action) => {
+            const { name, value } = action.payload
+            state.filters = { ...state.filters, [name]: value }
+        },
         addToCart: (state, action) => {
             state.cartCounter += action.payload
         }
@@ -31,5 +36,5 @@ export const productSlice = createSlice({
     }
 })
 
-export const { addToCart } = productSlice.actions
+export const { addToCart, applyFilter } = productSlice.actions
 export default productSlice.reducer
