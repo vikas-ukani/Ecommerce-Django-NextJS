@@ -10,6 +10,7 @@ class Product(models.Model):
     name = models.CharField(max_length=50, default=None)
     slug = models.SlugField(default=None, null=True, blank=True)
     price = models.FloatField(default=0)
+    short_description = models.TextField(null=True, blank=True)
     description = models.TextField(default=None)
     discount_percentage = models.FloatField(default=0, max_length=2)
     category = models.ForeignKey(
@@ -17,6 +18,7 @@ class Product(models.Model):
     total_stock = models.IntegerField(default=10)
     image = models.ImageField(upload_to='product-images', default=None)
     is_active = models.BooleanField(default=True)
+    is_featured = models.BooleanField(default=True)
 
     class Meta:
         verbose_name = 'Product'
