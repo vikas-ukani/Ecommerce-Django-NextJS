@@ -9,10 +9,17 @@ export const fetchCategory = createAsyncThunk(
         return await getCategories()
     }
 )
+// export const fetchAllCategory = createAsyncThunk(
+//     'common/fetchCategory',
+//     async () => {
+//         return await getAllCategories()
+//     }
+// )
 
 const initialState = {
     value: 0,
-    categories: ''
+    categories: '',
+    // allCategories: ''
 }
 export const commonSlice = createSlice({
     name: 'common',
@@ -35,6 +42,12 @@ export const commonSlice = createSlice({
         [fetchCategory.rejected]: (state, action) => {
             state.categories = []
         },
+        // [fetchAllCategory.fulfilled]: (state, action) => {
+        //     state.getCategories = action.payload
+        // },
+        // [fetchAllCategory.rejected]: (state, action) => {
+        //     state.getCategories = []
+        // },
     },
 })
 // Action creators are generated for each case reducer function
