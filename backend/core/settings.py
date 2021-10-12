@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     # Installed Apps.
-    'corsheaders', 
+    'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
     'allauth',
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
 
     # My Apps.
     'masters',
-    'product_management', 
+    'product_management',
 ]
 
 MIDDLEWARE = [
@@ -134,9 +134,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SITE_ID = 1
 
 REST_FRAMEWORK = {
-    # 'DEFAULT_AUTHENTICATION_CLASSES': [
-    #     'rest_framework.authentication.TokenAuthentication'
-    # ]
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication'
+    ]
 }
 
 
