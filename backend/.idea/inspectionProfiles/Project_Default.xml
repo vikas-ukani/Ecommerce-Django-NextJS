@@ -1,0 +1,124 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="CssUnknownProperty" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myCustomPropertiesEnabled" value="true" />
+      <option name="myIgnoreVendorSpecificProperties" value="false" />
+      <option name="myCustomPropertiesList">
+        <value>
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="pointer" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <Languages>
+        <language minSize="94" name="Python" />
+      </Languages>
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="7">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="style" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="61">
+            <item index="0" class="java.lang.String" itemvalue="arrow" />
+            <item index="1" class="java.lang.String" itemvalue="Babel" />
+            <item index="2" class="java.lang.String" itemvalue="pytest-django" />
+            <item index="3" class="java.lang.String" itemvalue="atomicwrites" />
+            <item index="4" class="java.lang.String" itemvalue="psycopg2-binary" />
+            <item index="5" class="java.lang.String" itemvalue="python-dotenv" />
+            <item index="6" class="java.lang.String" itemvalue="py" />
+            <item index="7" class="java.lang.String" itemvalue="kombu" />
+            <item index="8" class="java.lang.String" itemvalue="django-simple-pagination" />
+            <item index="9" class="java.lang.String" itemvalue="redis" />
+            <item index="10" class="java.lang.String" itemvalue="elasticsearch" />
+            <item index="11" class="java.lang.String" itemvalue="certifi" />
+            <item index="12" class="java.lang.String" itemvalue="django-settings-export" />
+            <item index="13" class="java.lang.String" itemvalue="lxml" />
+            <item index="14" class="java.lang.String" itemvalue="vine" />
+            <item index="15" class="java.lang.String" itemvalue="xlrd" />
+            <item index="16" class="java.lang.String" itemvalue="rjsmin" />
+            <item index="17" class="java.lang.String" itemvalue="boto" />
+            <item index="18" class="java.lang.String" itemvalue="asgiref" />
+            <item index="19" class="java.lang.String" itemvalue="django-appconf" />
+            <item index="20" class="java.lang.String" itemvalue="uWSGI" />
+            <item index="21" class="java.lang.String" itemvalue="whitenoise" />
+            <item index="22" class="java.lang.String" itemvalue="boto3" />
+            <item index="23" class="java.lang.String" itemvalue="cssselect" />
+            <item index="24" class="java.lang.String" itemvalue="django-haystack" />
+            <item index="25" class="java.lang.String" itemvalue="more-itertools" />
+            <item index="26" class="java.lang.String" itemvalue="pluggy" />
+            <item index="27" class="java.lang.String" itemvalue="wcwidth" />
+            <item index="28" class="java.lang.String" itemvalue="sorl-thumbnail" />
+            <item index="29" class="java.lang.String" itemvalue="django-storages" />
+            <item index="30" class="java.lang.String" itemvalue="requests" />
+            <item index="31" class="java.lang.String" itemvalue="importlib-metadata" />
+            <item index="32" class="java.lang.String" itemvalue="jdcal" />
+            <item index="33" class="java.lang.String" itemvalue="celery" />
+            <item index="34" class="java.lang.String" itemvalue="django-phonenumber-field" />
+            <item index="35" class="java.lang.String" itemvalue="libsass" />
+            <item index="36" class="java.lang.String" itemvalue="billiard" />
+            <item index="37" class="java.lang.String" itemvalue="coverage" />
+            <item index="38" class="java.lang.String" itemvalue="rcssmin" />
+            <item index="39" class="java.lang.String" itemvalue="six" />
+            <item index="40" class="java.lang.String" itemvalue="botocore" />
+            <item index="41" class="java.lang.String" itemvalue="raven" />
+            <item index="42" class="java.lang.String" itemvalue="phonenumbers" />
+            <item index="43" class="java.lang.String" itemvalue="pytest" />
+            <item index="44" class="java.lang.String" itemvalue="amqp" />
+            <item index="45" class="java.lang.String" itemvalue="xlwt" />
+            <item index="46" class="java.lang.String" itemvalue="packaging" />
+            <item index="47" class="java.lang.String" itemvalue="django-compressor" />
+            <item index="48" class="java.lang.String" itemvalue="et-xmlfile" />
+            <item index="49" class="java.lang.String" itemvalue="pdfkit" />
+            <item index="50" class="java.lang.String" itemvalue="codacy-coverage" />
+            <item index="51" class="java.lang.String" itemvalue="python-memcached" />
+            <item index="52" class="java.lang.String" itemvalue="django-libsass" />
+            <item index="53" class="java.lang.String" itemvalue="Django" />
+            <item index="54" class="java.lang.String" itemvalue="pytz" />
+            <item index="55" class="java.lang.String" itemvalue="openpyxl" />
+            <item index="56" class="java.lang.String" itemvalue="Pillow" />
+            <item index="57" class="java.lang.String" itemvalue="django-heroku" />
+            <item index="58" class="java.lang.String" itemvalue="geoip2" />
+            <item index="59" class="java.lang.String" itemvalue="sqlparse" />
+            <item index="60" class="java.lang.String" itemvalue="django-base-url" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E101" />
+          <option value="W191" />
+          <option value="E117" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N803" />
+          <option value="N806" />
+          <option value="N802" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
