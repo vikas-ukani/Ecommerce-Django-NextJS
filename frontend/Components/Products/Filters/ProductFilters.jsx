@@ -14,8 +14,7 @@ const ProductFilters = () => {
         return (
             <button name='category' type="button"
                 onClick={() => updateCategory('category', category.id)}
-                className={`${filters.category == category.id && 'border-b font-bold border-black'}`}
-            >
+                className={`${filters.category == category.id && 'border-b font-bold border-black'}`}>
                 {filters && filters.category === category.id}
                 {category.name}
             </button>
