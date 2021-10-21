@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Category(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(max_length=200, null=True)
@@ -12,13 +13,10 @@ class Category(models.Model):
 
     class Meta:
         unique_together = ('name', 'parent',)
-        verbose_name_plural = "categories"   
-        # unique_together = (
-        #     ('name')
-        # )
+        verbose_name_plural = "categories"
 
-    def __str__(self):                           
-        full_path = [self.name]                  
+    def __str__(self):
+        full_path = [self.name]
         k = self.parent
         while k is not None:
             full_path.append(k.name)

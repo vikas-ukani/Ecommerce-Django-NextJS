@@ -1,15 +1,33 @@
-from django.db import models
-from django.db.models import fields
 from rest_framework import serializers
-from rest_framework.fields import SerializerMethodField
-from rest_framework.utils import model_meta
-from masters.apis.serializers import CategorySerializer
 from product_management.apis.mixins import TokenMixin
-from product_management.models import Cart, CartItem, Product
+from product_management.models import (
+    Cart, CartItem, Product, ProductAttributes)
+from masters.models import (Attribute, AttributeValue)
+
+
+class AttributeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Attribute
+        fields = '__all__'
+
+
+class AttributeValueSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AttributeValue
+        fields = '__all__'
+
+
+class ProductAttributeSerializer(serializers.ModelSerializer):
+    product_attrubute = AttributeSerializer(read_only=True, many=True)
+    product_attrubute_variant = AttributeValueSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = ProductAttributes
+        fields = '__all__'
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    # category = CategorySerializer(many=False)
+    attributes = ProductAttributeSerializer(read_only=True, many=True)
 
     class Meta:
         model = Product
@@ -38,7 +56,6 @@ class CartSerializer(TokenMixin, serializers.ModelSerializer):
         except:
             raise serializers.ValidationError("This is not a valid cart")
         print('cart_token', cart_token)
-
 
 
 class CartItemSerializer(serializers.ModelSerializer):
