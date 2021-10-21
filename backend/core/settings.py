@@ -30,9 +30,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
-    'allauth',
-    'dj_rest_auth',
-    'dj_rest_auth.registration',
+    'djoser',
 
     # My Apps.
     'masters',
@@ -135,13 +133,19 @@ SITE_ID = 1
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.TokenAuthentication',
-        # 'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ]
 }
-REST_USE_JWT = True
-JWT_AUTH_COOKIE = 'e-com-app-auth'
+SIMPLE_JWT = {
+    'AUTH_HEADER_TYPES': ('JWT',),
+}
 
+DJOSER = {
+    # 'LOGIN_FIELD': 'email',
+    "USER_CREATE_PASSWORD_RETYPE" : True,
+    # 'REQUIRED_FIELDS'  : ['username']
+}
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",

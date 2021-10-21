@@ -5,20 +5,27 @@ from product_management.apis.mixins import CartTokenMixin, TokenMixin
 from product_management.apis.serializers import CartItemSerializer, CartSerializer, ProductSerializer
 from product_management.models import Cart, Product
 from rest_framework.response import Response
-
+from rest_framework.permissions import IsAuthenticated
 
 class ProductsListView(ReadOnlyModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    # permission_classes=[IsAuthenticated]
+    lookup_field = 'slug'
 
     def get_queryset(self):
         queryset = Product.objects.all()
         return queryset
 
+    def retrieve(self, request, *args, **kwargs):
+        obj = self.get_object()  # here the object is retrieved
+        serializer = self.get_serializer(obj)
+        return Response(serializer.data)
 
 class CartAPIView(CartTokenMixin, APIView):
     token_param = "token"
     cart = None
+    # authentication_classes = [TokenAuthentication ,]
 
     def get_cart(self):
         (data, cart_data, response_status) = self.get_cart_from_token()
