@@ -11,6 +11,7 @@ export const fetchProducts = createAsyncThunk(
 const initialState = {
     cartCounter: 0,
     products: [],
+    carts: [],
     filters: {},
 }
 
