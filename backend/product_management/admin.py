@@ -1,9 +1,23 @@
 from django.contrib import admin
 
-from product_management.models import Cart, CartItem, Product
+from .models import (
+    Cart, CartItem, Product, ProductAttributes)
 
-# Register your models here.
-admin.site.register(Product)
+
+class ProductAttributesInline(admin.TabularInline):
+    model = ProductAttributes
+
+
+class ProductAdmin(admin.ModelAdmin):
+    inlines = [
+        ProductAttributesInline
+    ]
+
+    class Meta:
+        model = Product
+
+
+admin.site.register(Product, ProductAdmin)
 
 
 class CartItemInline(admin.TabularInline):

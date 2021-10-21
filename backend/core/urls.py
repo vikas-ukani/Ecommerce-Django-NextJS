@@ -7,10 +7,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Authentication APIs
-    path('dj-rest-auth/', include('dj_rest_auth.urls')),
-    path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
-    # path('accounts/', include('allauth.urls')),
+    path('auth/', include('djoser.urls')),
+    path('', include('djoser.urls.jwt')),
 
+    # API ROUTES
     # path('', include('task_management_app.urls')),
     path('api/', include('masters.apis.urls')),
     path('api/', include('product_management.apis.urls')),

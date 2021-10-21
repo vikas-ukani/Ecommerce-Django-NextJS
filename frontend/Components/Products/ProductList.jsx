@@ -1,4 +1,4 @@
-import ProductGridItem from './ProductGridItem';
+import ProductGridItem from "./ProductGridItem";
 
 const ProductList = ({ products }) => {
     return (

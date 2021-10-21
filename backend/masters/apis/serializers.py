@@ -2,14 +2,7 @@ from masters.models import Category
 from rest_framework import serializers
 
 
-# class SubCategorySerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Category
-#         fields = ('name', 'description')
-
-
 class CategorySerializer(serializers.ModelSerializer):
-    # subcategories = serializers.SubCategorySerializer()
 
     class Meta:
         model = Category
