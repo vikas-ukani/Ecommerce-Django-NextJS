@@ -32,7 +32,7 @@ export const productSlice = createSlice({
             state.products = action.payload
         },
         [fetchProducts.rejected]: (state, action) => {
-            state.products = []
+            state.products = []year. The opportunities to support these projects are nearly endless! You can dive into the ‘hacktoberfest’ topic on GitHub and GitLab, and start helping right nyear. The opportunities to support these projects are nearly endless! You can dive into the ‘hacktoberfest’ topic on GitHub and GitLab, and start helping right nyear. The opportunities to support these projects are nearly endless! You can dive into the ‘hacktoberfest’ topic on GitHub and GitLab, and start helping right nyear. The opportunities to support these projects are nearly endless! You can dive into the ‘hacktoberfest’ topic on GitHub and GitLab, and start helping right n
         },
     }
 })
