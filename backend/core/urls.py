@@ -7,11 +7,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Authentication APIs
-    path('auth/', include('djoser.urls')),
-    path('', include('djoser.urls.jwt')),
-
+    path('api/auth/', include('djoser.urls')),
+    path('api/', include('djoser.urls.jwt')),
     # API ROUTES
-    # path('', include('task_management_app.urls')),
     path('api/', include('masters.apis.urls')),
     path('api/', include('product_management.apis.urls')),
     path('api/', include('cart.apis.urls')),
