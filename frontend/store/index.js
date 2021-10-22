@@ -4,7 +4,7 @@ import productsReducer from './modules/product'
 
 export const store = configureStore({
     reducer: {
-        'common': commonReducer,
+        'commons': commonReducer,
         'products': productsReducer,
     },
 })
