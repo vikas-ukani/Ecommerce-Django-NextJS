@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     # My Apps.
     'masters',
     'product_management',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -143,7 +144,7 @@ SIMPLE_JWT = {
 
 DJOSER = {
     # 'LOGIN_FIELD': 'email',
-    "USER_CREATE_PASSWORD_RETYPE" : True,
+    "USER_CREATE_PASSWORD_RETYPE": True,
     # 'REQUIRED_FIELDS'  : ['username']
 }
 CORS_ORIGIN_ALLOW_ALL = False

@@ -1,7 +1,7 @@
 import ast
 import base64
-from product_management.models import Cart
 from rest_framework import status
+from .models import Cart
 
 
 class TokenMixin(object):
@@ -9,6 +9,7 @@ class TokenMixin(object):
     Creating and Parsing Cart Token
     '''
     token = None
+
     def create_token(self, data_dict):
         if type(data_dict) == type(dict()):
             print('str(data_dict)', str(data_dict))

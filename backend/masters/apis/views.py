@@ -11,7 +11,6 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.viewsets import ReadOnlyModelViewSet
 from product_management.apis.serializers import ProductSerializer
 from django.forms.models import model_to_dict
-
 from product_management.models import Product
 
 

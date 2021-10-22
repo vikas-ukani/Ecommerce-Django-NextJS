@@ -14,6 +14,7 @@ urlpatterns = [
     # path('', include('task_management_app.urls')),
     path('api/', include('masters.apis.urls')),
     path('api/', include('product_management.apis.urls')),
+    path('api/', include('cart.apis.urls')),
 ]
 
 
