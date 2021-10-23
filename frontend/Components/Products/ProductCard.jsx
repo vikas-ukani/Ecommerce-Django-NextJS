@@ -8,7 +8,6 @@ const ProductCard = ({ product }) => {
     const dispatch = useDispatch()
 
     const moveToCart = () => {
-        console.log('clicked', product.id, product.name)
         dispatch(addToCart(1))
     }
 
@@ -30,13 +29,13 @@ const ProductCard = ({ product }) => {
                     </a>
                     <p className="font-sm text-gray-700 mb-3">
                         {product?.short_description}
-                        {/* in reverse chronological order. */}
                     </p>
                     <p className='text-bold text-yellow-700 font-extrabold text-xl pb-1'>
-                        <span>&#8377;</span>
-                        {product?.price}
+                        <span>&#8377; </span>
+                        {product?.price} 
+                        <span className="text-xs text-green-600"> / OFF 0% </span>
                     </p>
-                    <div className="text-center space-x-10 inline-flex flex-shrink">
+                    <div className="px-5 py-2 flex flex-shrink grid-column justify-evenly gap-2 items-center">
                         <AddToCartButton moveToCart={moveToCart} />
                         <BuyNow />
                     </div>

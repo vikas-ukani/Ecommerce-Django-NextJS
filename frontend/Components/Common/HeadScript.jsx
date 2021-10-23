@@ -1,10 +1,9 @@
 import Head from 'next/head'
 
-
 const HeadScript = () => {
     return (
         <Head>
-            <title>Ecommerce | Django + NextJS </title>
+            <title>E-commerce | Django + NextJS </title>
             <meta name="description" content="Ecommerce Application build with by Django restframework with NextJS App" />
             <link rel="icon" href="/favicon.ico" />
             <link href="https://fonts.gstatic.com"></link>

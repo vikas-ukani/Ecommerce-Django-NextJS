@@ -19,15 +19,14 @@ export const loginProcess = createAsyncThunk(
 const initialState = {
     accessToken: null,
     error: null,
-    // allCategories: ''
 }
 export const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        // increment: (state) => {
-        //     state.value += 1
-        // },
+        saveToken: (state, action) => {
+            state.accessToken = action.payload
+        },
     },
     extraReducers: {
         [loginProcess.fulfilled]: (state, action) => {
@@ -38,15 +37,14 @@ export const authSlice = createSlice({
             } else {
                 state.accessToken = data.access
                 state.error = null
-
             }
         },
         [loginProcess.rejected]: (state, action) => {
-            console.log('action REJED::', action.payload);
-            state.accessToken = ''
+            state.accessToken = null
+            state.error = "Something went wrong!"
         },
     },
 })
 // Action creators are generated for each case reducer function
-export const { increment, } = authSlice.actions
+export const { saveToken, } = authSlice.actions
 export default authSlice.reducer

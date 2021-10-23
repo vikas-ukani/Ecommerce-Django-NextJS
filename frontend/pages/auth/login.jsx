@@ -1,42 +1,32 @@
-import { useRouter } from 'next/router'
-import React, { useEffect, useState } from "react";
+import Link from "next/link"
+import { useRouter } from 'next/router';
+import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
-import { loginProcess } from 'store/modules/auth'
+import { useToasts } from 'react-toast-notifications';
+import { callLoginAPI } from 'services/auth.service';
+import { saveToken } from 'store/modules/auth';
+import { removeToken, setToken } from 'Utils/token';
+
+
 const Login = () => {
     const router = useRouter()
-
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const { error, accessToken } = useSelector(state => state.auth)
+    const { addToast } = useToasts()
     const dispatch = useDispatch()
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const onSubmit = data => {
-        dispatch(loginProcess(data))
-    };
-
-    useEffect(() => {
-        if (error) {
-            toast.error(error, {
-                type: 'error',
-                position: "top-right",
-                theme: 'dark',
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-            });
-        }
-        if (accessToken) {
+    const onSubmit = async (input) => {
+        const { status, data } = await callLoginAPI(input);
+        if (status === 401 || status === 400) {
+            removeToken(null)
+            addToast(data.detail, { appearance: 'error', autoDismiss: true })
+        } else {
+            setToken(data.access)
+            dispatch(saveToken(data.access))
+            addToast("Login Success!", { appearance: 'success', autoDismiss: true })
             router.push('/')
-            toast.error("Login Success!", {
-                type: 'success',
-                position: "top-right",
-                theme: 'dark',
-            });
         }
-    }, [error, accessToken])
+    };
 
     return (
         <div className="min-h-screen py-2 flex flex-col justify-center sm:py-10">
@@ -57,15 +47,6 @@ const Login = () => {
                             <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate
                                 className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
 
-                                {/* <div className="relative pb-3">
-                                    <label htmlFor="email" className="pb-1 absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Email Address</label>
-                                    <input autoComplete="none" type="email"
-                                        className="mt-3 peer placeholder-transparent h-12 p-3 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
-                                        placeholder="Email address"
-                                        {...register("email", { required: "The email is required", })}
-                                    />
-                                    {errors.email && <small className="text-red-500">{errors.email.message}</small>}
-                                </div> */}
                                 <div className="relative pb-3">
                                     <label htmlFor="username" className="pb-1 absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm capitalize"
                                     >
@@ -89,8 +70,16 @@ const Login = () => {
                                 <div className="relative ">
                                     <button type="submit"
                                         className="mt-3 shadow-lg hover:shadow-2xl text-white bg-blue-500 hover:bg-blue-400 focus:ring-4 focus:ring-blue-400 font-large rounded-lg font-black text-lg px-6 py-2 text-center inline-flex items-center "
-                                    >Login
+                                    >
+                                        Login
                                     </button>
+
+                                    <Link href='/auth/register'
+                                    >
+                                        <a className="text-sm float-right mt-5 underline font-bold   ">
+                                            Are you aready registred user?
+                                        </a >
+                                    </Link>
                                 </div>
                             </form>
                         </div>
