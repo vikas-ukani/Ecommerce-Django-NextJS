@@ -23,10 +23,10 @@ const ProductFilters = () => {
 
     return (
         <div className="">
-            <div className="bg-gray-100 p-2 rounded-2xl text-2xl font-bold text-center capitalize" >
+            <div className="bg-white shadow-lg  p-2 rounded-2xl text-2xl font-bold text-center capitalize" >
                 Product Filters
             </div>
-            <div className="bg-gray-100 mt-2 p-3 rounded-2xl text-left capitalize font-extrabold" >
+            <div className="bg-white shadow-lg  mt-2 p-3 rounded-2xl text-left capitalize font-extrabold" >
                 <b className='py-5'>Available Categories</b>
                 <ul className='pt-3'>
                     {categories && categories.map(category => (
