@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { fetchProducts } from "store/modules/product";
 import { fetchCategory } from 'store/modules/common'
 import Header from "Components/Common/Header";
+import Footer from "Components/Common/Header/Footer";
 
 // LAYOUT
 const index = ({ children }) => {
@@ -19,6 +20,7 @@ const index = ({ children }) => {
             <div className="   mx-auto bg-gray-100 pt-20" >
                 {children}
             </div>
+            <Footer />
         </>
     );
 }
