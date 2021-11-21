@@ -1,10 +1,18 @@
 from typing import cast
+from rest_framework import generics
 from rest_framework.viewsets import ReadOnlyModelViewSet
 from product_management.apis.serializers import ProductSerializer
 from product_management.models import Product
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
+# class ProductsListView(generics.ListAPIView):
+#     queryset = Product.objects.all()
+#     serializer_class = ProductSerializer
+    
+
+
+# # OLD
 class ProductsListView(ReadOnlyModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
