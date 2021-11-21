@@ -9,6 +9,8 @@ cryptography==35.0.0
 defusedxml==0.7.1
 Django==3.2.8
 django-cors-headers==3.10.0
+django-js-asset==1.2.2
+django-mptt==0.13.4
 django-templated-mail==1.1.1
 djangorestframework==3.12.4
 djangorestframework-simplejwt==4.8.0

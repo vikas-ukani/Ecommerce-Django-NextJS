@@ -1,10 +1,9 @@
 from django.contrib import admin
 from masters.models import (Category, Attribute, AttributeValue)
-
+from mptt.admin import MPTTModelAdmin
 
 # Register your models here.
-admin.site.register(Category)
-
+admin.site.register(Category, MPTTModelAdmin)
 
 class AttributeAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug', 'is_active')
