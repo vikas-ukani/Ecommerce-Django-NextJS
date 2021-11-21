@@ -6,4 +6,5 @@ urlpatterns = [
          ProductsListView.as_view({'get': 'list'}), name='products-list'),
     path('products/<str:slug>',
          ProductsListView.as_view({'get': 'retrieve'}), name='products_detail'),
+
 ]

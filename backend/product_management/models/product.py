@@ -11,7 +11,6 @@ class ProductType(models.Model):
     name = models.CharField(max_length=255, )
     is_active = models.BooleanField(default=True, )
 
-
     class Meta:
         verbose_name = 'Product Type'
         verbose_name_plural = 'Product Types'
@@ -110,10 +109,9 @@ class ProductSpecificationValue(models.Model):
         verbose_name_plural = 'Product Specifications'
 
 
-
 class ProductImage(models.Model):
     product = models.ForeignKey(
-        Product, on_delete=models.CASCADE, related_name='product_image')
+        Product, on_delete=models.CASCADE, related_name='product_images')
     image = models.ImageField(
         upload_to='product-images', default='product-image/default.png')
     alt_text = models.CharField(max_length=255, blank=True, null=True)

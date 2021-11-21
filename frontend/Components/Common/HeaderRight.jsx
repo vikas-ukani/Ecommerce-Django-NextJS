@@ -35,7 +35,7 @@ const HeaderRight = () => {
                                 My Profile
                             </a>
                         </Link > */}
-                        <MyAccount />
+                        <MyAccountPopover />
                         <button
                             className="text-black-600 mx-1 sm:mx-1 capitalize tracking-wide hover:text-orange-500 transition-all"
                             onClick={logoutProcess}
