@@ -5,7 +5,7 @@ const ProductDetailPage = ({ product }) => {
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 h-screen ">
             <div className="flex flex-col md:flex-row -mx-4 ">
-                <ProductDetailImages product={product} />
+                {product.product_images && <ProductDetailImages product={product} />}
                 <div className="md:flex-1 px-4">
                     <h2 className="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">
                         {product.name}
