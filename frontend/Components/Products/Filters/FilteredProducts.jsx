@@ -12,7 +12,7 @@ const FilteredProducts = () => {
         setFilteredProduct(productFilter(products, filters))
     }, [products, filters])
     return (
-        <div className='grid xs:grid-cols-4 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-1'>
+        <div className='grid xs:grid-cols-4 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-1'>
             <ProductList products={filteredProduct} />
         </div>
     );

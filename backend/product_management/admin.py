@@ -1,18 +1,35 @@
 from django.contrib import admin
-from .models import (Product, ProductAttributes)
+from .models import (Product,
+                     ProductType,
+                     ProductAttributes,
+                     ProductSpecification,
+                     ProductSpecificationValue,
+                     ProductImage
+                     )
 
 
-class ProductAttributesInline(admin.TabularInline):
-    model = ProductAttributes
+class ProductSpecificationInline(admin.TabularInline):
+    model = ProductSpecification
 
 
-class ProductAdmin(admin.ModelAdmin):
+@admin.register(ProductType)
+class ProductTypeAdmin(admin.ModelAdmin):
     inlines = [
-        ProductAttributesInline
+        ProductSpecificationInline
     ]
 
-    class Meta:
-        model = Product
+
+class ProductImageInline(admin.TabularInline):
+    model = ProductImage
 
 
-admin.site.register(Product, ProductAdmin)
+class ProductSpecificationValueInline(admin.TabularInline):
+    model = ProductSpecificationValue
+
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    inlines = [
+        ProductSpecificationValueInline,
+        ProductImageInline,
+    ]

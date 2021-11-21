@@ -1,7 +1,16 @@
-from .product import (Product, ProductAttributes)
+from .product import (ProductType,
+                      ProductSpecification,
+                      ProductAttributes,
+                      Product,
+                      ProductSpecificationValue,
+                      ProductImage)
 
 
 __all__ = [
-    'Product',
+    'ProductType',
+    'ProductSpecification',
     'ProductAttributes',
+    'Product',
+    'ProductSpecificationValue',
+    'ProductImage',
 ]

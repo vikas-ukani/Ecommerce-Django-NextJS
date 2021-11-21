@@ -13,7 +13,7 @@ const ProductFilters = () => {
     const CategoryButton = ({ category }) => {
         return (
             <button name='category' type="button"
-                onClick={() => updateCategory('category', category.id)}
+                onClick={() => category.parent && updateCategory('category', category.id)}
                 className={`${filters.category == category.id && 'border-b font-bold border-black'}`}>
                 {filters && filters.category === category.id}
                 {category.name}
@@ -23,12 +23,12 @@ const ProductFilters = () => {
 
     return (
         <div className="">
-            <div className="bg-gray-100 p-2 rounded-2xl text-2xl font-bold text-center capitalize" >
+            <div className="bg-white shadow-lg  p-2 rounded-2xl text-2xl font-bold text-center capitalize" >
                 Product Filters
             </div>
-            <div className="bg-gray-100 mt-2 p-3 rounded-2xl text-left capitalize font-extrabold" >
-                <b className='my-5'>Categories</b>
-                <ul>
+            <div className="bg-white shadow-lg  mt-2 p-3 rounded-2xl text-left capitalize font-extrabold" >
+                <b className='py-5'>Available Categories</b>
+                <ul className='pt-3'>
                     {categories && categories.map(category => (
                         <li key={category.id} className='py-1'>
                             <CategoryButton category={category} />
@@ -41,7 +41,6 @@ const ProductFilters = () => {
                                                 <ol className="pl-5 py-1">
                                                     {subcategory.sub_categories.map(subSubcategory => (
                                                         <li key={subSubcategory.id}>
-                                                            {console.log(subcategory.sub_categories)}
                                                             <CategoryButton category={subSubcategory} />
                                                             {subSubcategory.sub_categories && (
                                                                 <ol className="pl-5 py-1">

@@ -31,6 +31,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
+    'mptt',
+
 
     # My Apps.
     'masters',
