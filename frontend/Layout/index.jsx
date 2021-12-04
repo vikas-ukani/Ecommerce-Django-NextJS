@@ -17,7 +17,7 @@ const index = ({ children }) => {
     return (
         <>
             <Header />
-            <div className="   mx-auto bg-gray-100 pt-20" >
+            <div className="   mx-auto bg-gray-100 pt-20 pb-10" >
                 {children}
             </div>
             <Footer />

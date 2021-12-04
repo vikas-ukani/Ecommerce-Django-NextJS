@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useDispatch } from 'react-redux';
 import { addToCart } from "store/modules/product";
+import Carousel from 'nuka-carousel';
 
 const ProductCard = ({ product }) => {
     const dispatch = useDispatch()
@@ -16,35 +17,44 @@ const ProductCard = ({ product }) => {
             <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-full mb-5">
                 <Link href={PRODUCT_URL}>
                     <a >
-
-                        {product.product_images ? 
-                        <div>
-                            <Image
-                            width="100%" height="100%" layout="responsive"
-                            src={product.product_images[0].image}
-                            alt={product.name}
-                        />
-                            <div class="flex justify-end items-center space-x-2 absolute">
-                    <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded">
-                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="5" cy="5" r="4.75" fill="#F59E0B" stroke="#6B7280" stroke-width="0.5">
-                            </circle>
-                        </svg>
-                    </button>
-                    <button aria-label="show in light gray color" className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded">
-                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="5" cy="5" r="4.75" fill="#9CA3AF" stroke="#6B7280" stroke-width="0.5">
-                            </circle>
-                        </svg>
-                    </button>
-                </div>
-                </div>
+                        {product.product_images ?
+                            <div>
+                                <Carousel>
+                                    {product.product_images.map(image => {
+                                        return <img src={image.image} />
+                                    })}
+                                    {/* <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide2" />
+                                    <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide3" />
+                                    <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide4" />
+                                    <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide5" />
+                                    <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide6" /> */}
+                                </Carousel>
+                                {/* <Image
+                                    width="100%" height="100%" layout="responsive"
+                                    src={product.product_images[0].image}
+                                    alt={product.name}
+                                /> */}
+                                {/* <div class="flex justify-end items-center space-x-2 absolute">
+                                    <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded">
+                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="5" cy="5" r="4.75" fill="#F59E0B" stroke="#6B7280" stroke-width="0.5">
+                                            </circle>
+                                        </svg>
+                                    </button>
+                                    <button aria-label="show in light gray color" className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded">
+                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="5" cy="5" r="4.75" fill="#9CA3AF" stroke="#6B7280" stroke-width="0.5">
+                                            </circle>
+                                        </svg>
+                                    </button>
+                                </div> */}
+                            </div>
                             :
                             product.name
                         }
                     </a>
                 </Link>
-                
+
                 <div className="p-5 bg-indigo-100">
                     <Link href={PRODUCT_URL}>
                         <a >

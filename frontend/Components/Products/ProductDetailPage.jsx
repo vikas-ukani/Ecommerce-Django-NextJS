@@ -3,8 +3,8 @@ import ProductDetailImages from "./ProductDetailImages";
 
 const ProductDetailPage = ({ product }) => {
     return (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 h-screen ">
-            <div className="flex flex-col md:flex-row -mx-4 ">
+        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 my-6  ">
+            <div className="flex flex-col md:flex-row mx-4 ">
                 {product.product_images && <ProductDetailImages product={product} />}
                 <div className="md:flex-1 px-4">
                     <h2 className="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">
@@ -21,14 +21,14 @@ const ProductDetailPage = ({ product }) => {
                             <span className="font-bold text-indigo-600 text-3xl">{product.discount_price}
                                 <sub className="text-green-500 text-xl font-semibold line-through">{product.regular_price}</sub></span>
                         </div>
-                      
+
                     </div>
                     <p>
-                            <small>Save up to {(product.regular_price - product.discount_price).toFixed(2)} $</small>
-                            <p className="text-gray-400 text-sm">Inclusive of all Taxes.</p>
-                            {product.total_stock && <p className="text-gray-500 text-sm font-bold">Total InStock {product.total_stock} item.</p>}
+                        <small>Save up to {(product.regular_price - product.discount_price).toFixed(2)} $</small>
+                        <p className="text-gray-400 text-sm">Inclusive of all Taxes.</p>
+                        {product.total_stock && <p className="text-gray-500 text-sm font-bold">Total InStock {product.total_stock} item.</p>}
 
-                        </p>
+                    </p>
                     <p className="text-gray-700">
                         {product.short_description}
                     </p>
@@ -56,13 +56,13 @@ const ProductDetailPage = ({ product }) => {
                     </div>
                 </div>
             </div >
-            <section>
+            <div className=" mt-20 border-t-2">
                 <h2 className="uppercase tracking-wide text-xl font-semibold text-gray-700 my-4">
                     Product Information
                 </h2>
                 <p className="text-gray-800">
-                        {product.description}
-                    </p>
+                    {product.description}
+                </p>
                 {product.attributes && product?.attributes.map(attribute => (
                     <fieldset key={attribute.id} className="mb-3 bg-white shadow-lg rounded text-gray-600">
                         <label className="flex border-b border-gray-200 h-12 py-3 items-center">
@@ -71,7 +71,23 @@ const ProductDetailPage = ({ product }) => {
                         </label>
                     </fieldset>
                 ))}
-            </section>
+            </div>
+            <div className=" mt-14 border-t-2">
+                <h2 className="uppercase tracking-wide text-xl font-semibold text-gray-700 my-4">
+                    Product Information
+                </h2>
+                <p className="text-gray-800">
+                    {product.description}
+                </p>
+                {product.attributes && product?.attributes.map(attribute => (
+                    <fieldset key={attribute.id} className="mb-3 bg-white shadow-lg rounded text-gray-600">
+                        <label className="flex border-b border-gray-200 h-12 py-3 items-center">
+                            <span className="text-right px-10">{attribute.attribute}</span>
+                            <div>{attribute.variant}</div>
+                        </label>
+                    </fieldset>
+                ))}
+            </div>
         </div >
     );
 }

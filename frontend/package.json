@@ -14,6 +14,8 @@
     "js-cookie": "^3.0.1",
     "next": "11.1.2",
     "nprogress": "^0.2.0",
+    "nuka-carousel": "^4.8.4",
+    "pure-react-carousel": "^1.27.8",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hook-form": "^7.17.5",
@@ -26,6 +28,7 @@
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "postcss": "^8.3.9",
-    "tailwindcss": "^2.2.16"
+    "tailwindcss": "^2.2.16",
+    "url-loader": "^4.1.1"
   }
 }

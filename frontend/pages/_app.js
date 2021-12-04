@@ -1,5 +1,9 @@
+
 import 'tailwindcss/tailwind.css'
 import 'nprogress/nprogress.css'
+
+import 'pure-react-carousel/dist/react-carousel.es.css';
+
 import HeadScript from 'Components/Common/HeadScript'
 import Layout from 'Layout'
 import { store } from 'store'

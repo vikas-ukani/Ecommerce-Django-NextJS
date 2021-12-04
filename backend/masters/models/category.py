@@ -13,8 +13,6 @@ class Category(MPTTModel):
 
     parent = TreeForeignKey('self', on_delete=models.CASCADE,
                             null=True, blank=True, related_name='children')
-    # parent = models.ForeignKey(
-    #     'self', default=None, blank=True, null=True, related_name="sub_categories", on_delete=models.CASCADE)
 
     class Meta:
         unique_together = ('name', 'parent',)

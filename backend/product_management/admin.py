@@ -11,10 +11,13 @@ from .models import (Product,
 class ProductSpecificationInline(admin.TabularInline):
     model = ProductSpecification
 
+class ProductAttributeInline(admin.TabularInline):
+    model=  ProductAttributes
 
 @admin.register(ProductType)
 class ProductTypeAdmin(admin.ModelAdmin):
     inlines = [
+        # ProductAttributeInline
         ProductSpecificationInline
     ]
 

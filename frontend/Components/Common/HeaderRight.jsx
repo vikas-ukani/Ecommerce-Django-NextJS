@@ -9,7 +9,6 @@ import MyAccountPopover from "Components/UI/MyAccountPopover";
 
 
 const HeaderRight = () => {
-    const router = useRouter()
     const { cartCounter } = useSelector((state) => state.products)
     const { accessToken } = useSelector((state) => state.auth)
     const dispatch = useDispatch()
@@ -19,29 +18,16 @@ const HeaderRight = () => {
         if (token) dispatch(saveToken(token))
     }, [accessToken])
 
-    const logoutProcess = () => {
-        removeToken()
-        router.push('/auth/login')
-        dispatch(saveToken(null))
-    }
+
     return (
         <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
             <CartIcon cartCounter={cartCounter} />
             {accessToken
                 ? (
                     <>
-                        {/* <Link href='/user/profile' >
-                            <a className="text-black-600 mx-2 sm:mx-4 capitalize tracking-wide hover:text-orange-500 transition-all" >
-                                My Profile
-                            </a>
-                        </Link > */}
                         <MyAccountPopover />
-                        <button
-                            className="text-black-600 mx-1 sm:mx-1 capitalize tracking-wide hover:text-orange-500 transition-all"
-                            onClick={logoutProcess}
-                        >
-                            Logout
-                        </button >
+                     
+                       
                     </>
                 )
                 : (
