@@ -13,9 +13,10 @@ const ProductFilters = () => {
     const CategoryButton = ({ category }) => {
         return (
             <button name='category' type="button"
-                onClick={() => category.parent && updateCategory('category', category.id)}
-                className={`${filters.category == category.id && 'border-b font-bold border-black'}`}>
-                {filters && filters.category === category.id}
+                onClick={() => updateCategory('category', category.slug)}
+                // onClick={() => category.parent && updateCategory('category', category.slug)}
+                className={`${filters.category == category.slug && 'border-b font-bold border-black'}`}>
+                {filters && filters.category === category.slug}
                 {category.name}
             </button>
         )
@@ -32,19 +33,19 @@ const ProductFilters = () => {
                     {categories && categories.map(category => (
                         <li key={category.id} className='py-1'>
                             <CategoryButton category={category} />
-                            {category.sub_categories && (
+                            {category.children && (
                                 <ol className="pl-5 py-1">
-                                    {category.sub_categories.map(subcategory => (
+                                    {category.children.map(subcategory => (
                                         <li key={subcategory.id}>
                                             <CategoryButton category={subcategory} />
-                                            {subcategory.sub_categories && (
+                                            {subcategory.children && (
                                                 <ol className="pl-5 py-1">
-                                                    {subcategory.sub_categories.map(subSubcategory => (
+                                                    {subcategory.children.map(subSubcategory => (
                                                         <li key={subSubcategory.id}>
                                                             <CategoryButton category={subSubcategory} />
-                                                            {subSubcategory.sub_categories && (
+                                                            {subSubcategory.children && (
                                                                 <ol className="pl-5 py-1">
-                                                                    {subSubcategory.sub_categories.map(subSubSubcategory => (
+                                                                    {subSubcategory.children.map(subSubSubcategory => (
                                                                         <li key={subSubSubcategory.id}>
                                                                             <CategoryButton category={subSubSubcategory} />
                                                                         </li>

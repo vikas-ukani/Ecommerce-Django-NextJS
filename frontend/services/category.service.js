@@ -5,6 +5,12 @@ export const getCategories = () => {
     return axios.get(API_URL + 'category/').then(async data => await data.data)
 }
 
+
+export const getProductByCategorySlug = (slug) => {
+    return axios.get(API_URL + 'category/' + slug).then(async data => await data.data)
+}
+
+
 // export const getAllCategories = () => {
 //     return axios.get(API_URL + 'category/').then(async data => await data.data)
 // }

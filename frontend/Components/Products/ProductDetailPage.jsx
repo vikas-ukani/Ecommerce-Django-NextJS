@@ -16,23 +16,21 @@ const ProductDetailPage = ({ product }) => {
                     </p>
 
                     <div className="flex items-center space-x-4 my-4">
-                        <div>
-                            <div className="rounded-lg bg-gray-100 flex py-2 px-3">
-                                <span className="text-indigo-400 mr-1 mt-1">$</span>
-                                <span className="font-bold text-indigo-600 text-3xl">{product.price}</span>
-                            </div>
+                        <div className="rounded-lg bg-gray-100 flex py-2 px-3">
+                            <span className="text-indigo-400 mr-1 mt-1">$</span>
+                            <span className="font-bold text-indigo-600 text-3xl">{product.discount_price}
+                                <sub className="text-green-500 text-xl font-semibold line-through">{product.regular_price}</sub></span>
                         </div>
-                        <div className="flex-1">
-                            <p className="text-green-500 text-xl font-semibold">Offer {product.discount_percentage}%
-                                <small>Save up to {product.price * product.discount_percentage / 100}</small>
-                            </p>
+                      
+                    </div>
+                    <p>
+                            <small>Save up to {(product.regular_price - product.discount_price).toFixed(2)} $</small>
                             <p className="text-gray-400 text-sm">Inclusive of all Taxes.</p>
                             {product.total_stock && <p className="text-gray-500 text-sm font-bold">Total InStock {product.total_stock} item.</p>}
-                        </div>
-                    </div>
 
-                    <p className="text-gray-500">
-                        {product.description}
+                        </p>
+                    <p className="text-gray-700">
+                        {product.short_description}
                     </p>
 
                     <div className="flex py-4 space-x-4">
@@ -62,10 +60,13 @@ const ProductDetailPage = ({ product }) => {
                 <h2 className="uppercase tracking-wide text-xl font-semibold text-gray-700 my-4">
                     Product Information
                 </h2>
-                {product?.attributes.map(attribute => (
+                <p className="text-gray-800">
+                        {product.description}
+                    </p>
+                {product.attributes && product?.attributes.map(attribute => (
                     <fieldset key={attribute.id} className="mb-3 bg-white shadow-lg rounded text-gray-600">
                         <label className="flex border-b border-gray-200 h-12 py-3 items-center">
-                            <span className="text-right px-10">{attribute.attrubute}</span>
+                            <span className="text-right px-10">{attribute.attribute}</span>
                             <div>{attribute.variant}</div>
                         </label>
                     </fieldset>

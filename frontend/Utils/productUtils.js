@@ -7,13 +7,13 @@ export const productFilter = (products, filters) => {
     if (isEmpty(filters)) return products
     if (isEmpty(products)) return []
 
-    var filterdProduct = []
+    var filteredProduct = []
     if (products && filters.category) {
-        filterdProduct = products.filter(product => {
-            return product.category.id == filters.category
+        filteredProduct = products.filter(product => {
+            return product.category.slug == filters.category
         })
     }
-    return filterdProduct
+    return filteredProduct
 }
 
 
