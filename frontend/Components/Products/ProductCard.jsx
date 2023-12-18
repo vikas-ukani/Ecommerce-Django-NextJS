@@ -15,7 +15,6 @@ const ProductCard = ({ product }) => {
         <div className="max-w-lg mx-auto">
             <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-full mb-5">
                 <Link href={PRODUCT_URL}>
-                    <a >
                         {product.product_images ? <Image
                             width="100%" height="100%" layout="responsive"
                             src={product.product_images[0].image}
@@ -24,15 +23,12 @@ const ProductCard = ({ product }) => {
                             :
                             product.name
                         }
-                    </a>
                 </Link>
                 <div className="p-5 bg-indigo-100">
                     <Link href={PRODUCT_URL}>
-                        <a >
                             <h5 className="text-gray-900 font-bold text-2xl tracking-tight mb-2">
                                 {product.name}
                             </h5>
-                        </a>
                     </Link>
                     <p className="font-sm text-gray-700 mb-3">
                         {product?.short_description}

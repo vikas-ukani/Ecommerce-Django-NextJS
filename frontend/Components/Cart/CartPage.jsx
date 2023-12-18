@@ -20,12 +20,10 @@ const CartPage = () => {
                             <div className="flex justify-between items-center mt-6 pt-6 border-t">
                                 <div className="flex items-center">
                                     <Link href="/products">
-                                        <a>
-                                            <i className="fa fa-arrow-left text-sm pr-2"></i>
-                                            <span className="text-md font-medium text-blue-500">
-                                                Continue Shopping
-                                            </span>
-                                        </a>
+                                        <i className="fa fa-arrow-left text-sm pr-2"></i>
+                                        <span className="text-md font-medium text-blue-500">
+                                            Continue Shopping
+                                        </span>
                                     </Link>
                                 </div>
                                 <div className="flex justify-center items-end">

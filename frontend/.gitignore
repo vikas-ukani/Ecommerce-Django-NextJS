@@ -38,3 +38,4 @@ yarn-error.log*
 #
 package-lock.json
 frontend/package-lock.json
+/package-lock.json

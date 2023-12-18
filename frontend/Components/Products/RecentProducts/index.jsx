@@ -22,10 +22,8 @@ const RecentProducts = () => {
             </div>
             <div className="text-center center-block mb-16 text-5xl">
                 {/* <b className='capitalize italic border-b-8 rounded-b-3xl border-t-8 rounded-t-3xl border-pink-900 px-6 py-5'> */}
-                <Link href="/products">
-                    <a className="shadow-lg hover:shadow-2xl text-black bg-yellow-500 hover:bg-yellow-400 focus:ring-4 focus:ring-yellow-400 font-large rounded-lg font-black text-lg px-6 py-3 text-center inline-flex items-center">
+                <Link href="/products" className="shadow-lg hover:shadow-2xl text-black bg-yellow-500 hover:bg-yellow-400 focus:ring-4 focus:ring-yellow-400 font-large rounded-lg font-black text-lg px-6 py-3 text-center inline-flex items-center">
                         View All Products
-                    </a>
                 </Link>
                 {/* </b> */}
             </div>

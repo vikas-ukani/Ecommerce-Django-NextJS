@@ -75,10 +75,9 @@ const Login = () => {
                                     </button>
 
                                     <Link href='/auth/register'
+                                    className="text-sm float-right mt-5 underline font-bold   "
                                     >
-                                        <a className="text-sm float-right mt-5 underline font-bold   ">
                                             Are you aready registred user?
-                                        </a >
                                     </Link>
                                 </div>
                             </form>

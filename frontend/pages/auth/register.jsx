@@ -99,11 +99,8 @@ const Register = () => {
                                         className="mt-3 shadow-lg hover:shadow-2xl text-white bg-blue-500 hover:bg-blue-400 focus:ring-4 focus:ring-blue-400 font-large rounded-lg font-black text-lg px-6 py-2 text-center inline-flex items-center ">
                                         Signup
                                     </button>
-                                    <Link href='/auth/login'
-                                    >
-                                        <a className="text-sm float-right mt-5 underline font-bold   ">
-                                            Click here to Login.
-                                        </a >
+                                    <Link href='/auth/login' className="text-sm float-right mt-5 underline font-bold   ">
+                                        Click here to Login.
                                     </Link>
                                 </div>
                             </form>
